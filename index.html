@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard · Smart Attendance Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">🎓</div>
+        <div class="brand-text">
+          <strong>Smart Attendance</strong>
+          <span>Student Tracker</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="index.html" class="active"><span class="nav-icon">🏠</span> Dashboard</a></li>
+          <li><a href="add-attendance.html"><span class="nav-icon">✅</span> Add Attendance</a></li>
+          <li><a href="subjects.html"><span class="nav-icon">📚</span> Subjects</a></li>
+          <li><a href="history.html"><span class="nav-icon">🕒</span> History</a></li>
+          <li><a href="charts.html"><span class="nav-icon">📊</span> Charts</a></li>
+          <li><a href="target.html"><span class="nav-icon">🎯</span> Target Calculator</a></li>
+          <li><a href="settings.html"><span class="nav-icon">⚙️</span> Settings</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        Frontend prototype · Data stored only in this browser (localStorage)
+      </div>
+    </aside>
+
+    <div class="topbar">
+      <button class="hamburger-btn" id="hamburgerBtn">☰</button>
+      <span class="topbar-title">Dashboard</span>
+    </div>
+
+    <main class="main-content">
+      <div class="page-header">
+        <h1>Welcome back, <span id="studentName">Your Name</span></h1>
+        <p>
+          Roll No. <span id="studentRoll">—</span> ·
+          <span id="studentCourse">—</span> ·
+          <span id="studentSemester"></span>
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-title">Overall Attendance</div>
+          <div class="flex-row" style="align-items: baseline;">
+            <div class="stat-value" id="overallPercentage">0.0%</div>
+            <span class="badge badge-good" id="overallStatus">Good</span>
+          </div>
+          <p class="stat-sub" id="overallAttended">0 / 0 classes attended</p>
+          <div class="progress-track mt-24">
+            <div class="progress-fill success" id="overallProgressFill" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="align-content: start;">
+          <div class="card stat-card">
+            <div class="stat-icon success">✅</div>
+            <div class="card-title">Present</div>
+            <div class="stat-value" id="overallPresent">0</div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-icon danger">❌</div>
+            <div class="card-title">Absent</div>
+            <div class="stat-value" id="overallAbsent">0</div>
+          </div>
+          <div class="card stat-card" style="grid-column: span 2;">
+            <div class="stat-icon neutral">📘</div>
+            <div class="card-title">Total Classes Conducted</div>
+            <div class="stat-value" id="overallTotal">0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-24">
+        <div class="card-title">Subject-wise Attendance</div>
+        <div id="dashboardSubjectList"></div>
+      </div>
+
+      <div class="flex-row mt-24">
+        <a href="add-attendance.html" class="btn btn-primary">✅ Mark Attendance</a>
+        <a href="charts.html" class="btn btn-outline">📊 View Charts</a>
+        <a href="target.html" class="btn btn-outline">🎯 Target Calculator</a>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

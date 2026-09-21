@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Target Calculator · Smart Attendance Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">🎓</div>
+        <div class="brand-text">
+          <strong>Smart Attendance</strong>
+          <span>Student Tracker</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="index.html"><span class="nav-icon">🏠</span> Dashboard</a></li>
+          <li><a href="add-attendance.html"><span class="nav-icon">✅</span> Add Attendance</a></li>
+          <li><a href="subjects.html"><span class="nav-icon">📚</span> Subjects</a></li>
+          <li><a href="history.html"><span class="nav-icon">🕒</span> History</a></li>
+          <li><a href="charts.html"><span class="nav-icon">📊</span> Charts</a></li>
+          <li><a href="target.html" class="active"><span class="nav-icon">🎯</span> Target Calculator</a></li>
+          <li><a href="settings.html"><span class="nav-icon">⚙️</span> Settings</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        Frontend prototype · Data stored only in this browser (localStorage)
+      </div>
+    </aside>
+
+    <div class="topbar">
+      <button class="hamburger-btn" id="hamburgerBtn">☰</button>
+      <span class="topbar-title">Target Calculator</span>
+    </div>
+
+    <main class="main-content">
+      <div class="page-header">
+        <h1>Target Attendance Calculator</h1>
+        <p>Find out how many consecutive present classes you need to hit a target percentage.</p>
+      </div>
+
+      <div class="card" style="max-width: 480px;">
+        <form id="targetForm">
+          <div class="form-group">
+            <label for="targetSubjectSelect">Select Subject</label>
+            <select id="targetSubjectSelect" class="form-control">
+              <option value="">-- Select Subject --</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="targetPercentInput">Target Attendance %</label>
+            <input type="number" id="targetPercentInput" class="form-control" placeholder="e.g. 95" min="1" max="100" />
+            <span class="hint">Enter a value between 1 and 100.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+        </form>
+
+        <div id="targetResult" class="alert mt-24"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

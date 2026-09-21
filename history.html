@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>History · Smart Attendance Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">🎓</div>
+        <div class="brand-text">
+          <strong>Smart Attendance</strong>
+          <span>Student Tracker</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="index.html"><span class="nav-icon">🏠</span> Dashboard</a></li>
+          <li><a href="add-attendance.html"><span class="nav-icon">✅</span> Add Attendance</a></li>
+          <li><a href="subjects.html"><span class="nav-icon">📚</span> Subjects</a></li>
+          <li><a href="history.html" class="active"><span class="nav-icon">🕒</span> History</a></li>
+           <li><a href="charts.html"><span class="nav-icon">📊</span> Charts</a></li>
+          <li><a href="target.html"><span class="nav-icon">🎯</span> Target Calculator</a></li>
+          <li><a href="settings.html"><span class="nav-icon">⚙️</span> Settings</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        Frontend prototype · Data stored only in this browser (localStorage)
+      </div>
+    </aside>
+
+    <div class="topbar">
+      <button class="hamburger-btn" id="hamburgerBtn">☰</button>
+      <span class="topbar-title">History</span>
+    </div>
+
+    <main class="main-content">
+      <div class="page-header flex-row">
+        <div>
+          <h1>Attendance History</h1>
+          <p>Every attendance action, newest first.</p>
+        </div>
+        <button type="button" id="clearHistoryBtn" class="btn btn-danger-outline">🗑️ Clear History</button>
+      </div>
+
+      <div class="card">
+          <div id="historyList"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
